@@ -1,0 +1,119 @@
+					/*TELA PRINCIPAL*/
+
+/* HEADER telaPrincipal */
+#tituloPrincipal {
+	font-size: 1.9em;
+	text-align: center;
+	margin-left: 40px;
+}
+/* Fim HEADER */
+
+/* Imagem principal */
+.imagem {
+	background-image: url(../images/principal.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	height: 200px;
+	margin: -6% -6% 6% -6%;
+	position: relative;
+}
+#textoLegenda {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	padding: 2%;
+	text-align: left;
+	background: #000000;
+	color: #ffffff;
+	opacity: .7;
+	height: 30%
+}
+
+#atletismo {
+	background-image: url(../images/4.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	height: 100px;
+	
+}
+
+#volei {
+	background-image: url(../images/33.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	height: 100px;
+}
+
+h3 {
+	font-size: 1.2em;
+	font-family: italic;
+}
+
+.bigText {
+	font-size: 0.8em;
+	margin-top: 3%;
+}
+
+.pc70 {
+	padding-left: 2%;
+}
+
+.linha {
+	height: 110px;
+	margin-bottom: 0%;
+}
+
+					/* FIM TELA PRINCIPAL*/
+
+					/*DETALHAMENTO EVENTO*/
+
+h2 {
+	font-size: 1.8em;
+	margin-bottom: 5%;
+}
+
+.fonth2{
+	margin-bottom: 0%;
+
+}
+
+.tamfont{
+	font-size: 1em;
+}
+
+.tituloEvento {
+	font-size: 1.3em;
+}
+
+button {
+  height: 40px;
+  width: 150px;
+  border-radius: 11px;
+  font-family: Courier;
+  color: #ffffff;
+  font-size: 1.3em;
+  background: #faaf3c;
+  /*padding: 1% 3% 1% 3%;*/
+  display: block;
+  margin: 0 auto;
+}
+
+.linhaEvento {
+	margin-bottom: 7%;
+}
+
+#titulo {
+	text-align: center;
+	margin-bottom: 5%;
+}
+
+p {
+	font-size: 1.2em;
+}
+
+#naohaevento{
+	color: black;
+}
+
+					/*FIM DETALHAMENTO EVENTO*/

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js/traduzir.js"></script>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://maps.googleapis.com ">
+    <title>Displaying text directions with <code>setPanel()</code></title>
+    <!--Me desculpe pelo css estar aqui, mas é como está no exemplo do google maps e como eu já estou tentando fazer essa PORRA funcionar a alguns dias resolvi mexer o mínimo possível no código original do site do google. -->
+    <!-- tá perdoado (Cris) -->
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <style>
+      
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    #map {
+      height: 60%;
+    }
+    #floating-panel {
+      position: absolute;
+      top: 10px;
+      left: 25%;
+      z-index: 5;
+      background-color: #fff;
+      padding: 5px;
+      border: 1px solid #999;
+      text-align: center;
+      font-family: 'Roboto','sans-serif';
+      line-height: 30px;
+      padding-left: 10px;
+    }
+    #right-panel {
+      font-family: 'Roboto','sans-serif';
+      line-height: 30px;
+      padding-left: 10px;
+    }
+    #right-panel select, #right-panel input {
+      font-size: 15px;
+    }
+    #right-panel select {
+      width: 100%;
+    }
+    #right-panel i {
+      font-size: 12px;
+    }
+    #right-panel {
+      height: 25%;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      overflow: auto;
+    }
+    #floating-panel {
+      background: #fff;
+      padding: 5px;
+      font-size: 14px;
+      font-family: Arial;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
+      display: none;
+    }
+
+    header{
+    	height: 15%;
+    }
+      @media print {
+        #map {
+          height: 500px;
+          margin: 0;
+        }
+        #right-panel {
+          float: none;
+          width: auto;
+        }
+      }
+    </style>
+    <!-- Fim do css -->
+  </head>
+  <body onload="alterarinformacoesMapa()">
+  <!--Painel flutuante com a escolha dos lugares de destino-->
+    
+    <header>
+			<div id="menu-icon" onclick="slidetoggle()">
+				<span class="menu-icon-bar"></span>
+				<span class="menu-icon-bar"></span>
+				<span class="menu-icon-bar"></span>
+				</div>
+				<div id="content-menu">			
+					<h1 id="h1-menu">Olimpiadas Rio<br>2016</h1>
+					<nav id="content">
+						<div class="navbar">
+							<a  onClick="principal()"><img src="images/iconehome.png" class="menu-slider-icon"/ onClick="principal()"><span class="txtalign">HOME</span></a>
+						</div >
+						<div class="navbar">
+							<a onClick="agenda()"><img src="images/iconecalendario.png" class="menu-slider-icon"/><span class="txtalign" id="agenda">AGENDA</span></a>
+						</div>
+						<div class="navbar">
+							<a onClick="esportes()"><img src="images/iconecorredor.png" class="menu-slider-icon"/><span class="txtalign" id="esportes">ESPORTES</span></a>
+						</div>
+						<div class="navbar">	
+							<a onClick="locais()"><img src="images/iconemapa.png" class="menu-slider-icon"/><span class="txtalign" id="locais">LOCAIS</span></a>
+						</div>	
+						<hr id="menu-slider-hr">
+						<div class="navbar">
+							<a onClick="opcoes()"><img src="images/iconeengrenagem.png" class="menu-slider-icon"/><span class="txtalign" id="opcoes">OPÇÕES</span></a>
+						</div>
+					</nav>
+				</div>
+				<div>
+				<div>	
+					<ul></ul>
+					<h1 id="titulo">Rota</h1>
+				</div>
+			</header>
+    <!--Fim do painel flutuante -->
+
+    <!--Painel onde aparecem as informações escritas da rota -->
+    <div id="right-panel"></div>
+    <!--Fim do painel da rota escrita-->
+    <!--Nessa div entra o mapa, ou deveria.-->
+    <div id="map"></div>
+    <!--Fim da div do mapa -->
+    <!--<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+    <!--<script type="text/javascript"  src="js/common.js"></script>-->
+    
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/mapa.js"></script>
+
+    <!--<script type="text/javascript" src="js/script.js"></script>-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIzJXpNSHjNEvNXK0kHLd-ajCXGxnO07M&sensor=false&callback=miguel.inferno" async defer></script>
+    
+
+    <div id="shadow" class="shadow" onclick="slideclose()"></div>
+			<script src="js/script.js"></script>
+    <!--Importações necessárias pra rodar no cordova. -->
+    
+    <!--Fim das importações do cordova -->
+    <!--Onde o google maps pega o mapa, atenção no https e no callback-->
+    
+    <!--Fim do mapa -->
+  </body>
+</html>
